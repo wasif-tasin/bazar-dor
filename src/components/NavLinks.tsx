@@ -18,9 +18,11 @@ const NavLinks = async () => {
     const nav: INav[] = data;
 
     return (
-        <div className=" flex gap-8 justify-start mt-3 container mx-auto font-bold">
+        <div className=" flex gap-8 justify-start mt-3 mb-4 container mx-auto font-bold">
         <Link href={'/'}>হোম</Link>      
-        {nav.map((items) => <Link key={items.id} href={`/category/${items.slug}`}>{items.icon}{items.nameBn}</Link>)}
+        {
+        nav.map((items) => <Link key={items.id} href={`/category/${items.slug}`}>{items.icon}{items.nameBn}</Link>)
+        }
         </div>
     );
 };
