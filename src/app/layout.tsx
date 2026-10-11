@@ -20,7 +20,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${hindSiliguri.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col container mx-auto">
+      <body className="min-h-full flex flex-col">
         <NavBar></NavBar>
         <Marquee></Marquee>
         {children}

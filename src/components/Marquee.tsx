@@ -19,29 +19,31 @@ export default async function Marquee() {
     const products: Product[] = data;
 
     return (
-        <MarqueeText direction="right" duration={30}>
-            {products.map((product) => (
-                <span
-                    key={product.id}
-                    className="inline-flex items-center gap-3 border-r border-gray-200 px-5 py-3"
-                >
-                    <span>{product.categoryIcon}</span>
-                    <span className="whitespace-nowrap">{product.nameBn}</span>
-                    <span className="whitespace-nowrap">
-                        {product.today} টাকা/কেজি
-                    </span>
+        <div className=" container mx-auto">
+            <MarqueeText direction="right" duration={30}>
+                {products.map((product) => (
                     <span
-                        className={
-                            product.change.dir === "up"
-                                ? "whitespace-nowrap font-bold text-red-500"
-                                : "whitespace-nowrap font-bold text-green-600"
-                        }
+                        key={product.id}
+                        className="inline-flex items-center gap-3 border-r border-gray-200 px-5 py-3"
                     >
-                        {product.change.dir === "up" ? "▲" : "▼"}{" "}
-                        {Math.abs(product.change.pct)}%
+                        <span>{product.categoryIcon}</span>
+                        <span className="whitespace-nowrap">{product.nameBn}</span>
+                        <span className="whitespace-nowrap">
+                            {product.today} টাকা/কেজি
+                        </span>
+                        <span
+                            className={
+                                product.change.dir === "up"
+                                    ? "whitespace-nowrap font-bold text-red-500"
+                                    : "whitespace-nowrap font-bold text-green-600"
+                            }
+                        >
+                            {product.change.dir === "up" ? "▲" : "▼"}{" "}
+                            {Math.abs(product.change.pct)}%
+                        </span>
                     </span>
-                </span>
-            ))}
-        </MarqueeText>
+                ))}
+            </MarqueeText>
+        </div>
     );
 }

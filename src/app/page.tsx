@@ -1,9 +1,12 @@
+import Banner from "@/components/Banner";
 
 const Page = () => {
   return (
-    <div>
-      Hello
-    </div>
+    <>
+    <main className="min-h-screen bg-[#f1f5f1]">
+      <Banner></Banner>
+    </main>
+    </>
   );
 };
 
